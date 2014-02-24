@@ -42,4 +42,18 @@ public class MaxSubArray {
 		}
 		return max;
 	}
+
+	public int maxSubArray3(int[] A) {// O(1) space
+
+		int last = 0;
+		int max = A[0];
+		for (int i = 0; i < A.length; i++) {
+			if (last >= 0)
+				last += A[i];
+			else
+				last = A[i];
+			max = Math.max(last, max); // keep track of the largest sum
+		}
+		return max;
+	}
 }
