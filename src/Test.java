@@ -1,4 +1,5 @@
 import Applications.BestTimeToBuyAndSell;
+import Applications.LongestCommonSequence;
 import Applications.MaxSubArray;
 
 public class Test {
@@ -19,6 +20,9 @@ public class Test {
 		System.out.println(bttbas.maxProfit(btta));
 		System.out.println(bttbas.maxProfit2(btta));
 		System.out.println(bttbas.maxProfit3(btta));
+		
+		LongestCommonSequence lcs = new LongestCommonSequence();
+		lcs.getLongestCommonSequence("abcdefgi", "abyczdeo");
 	}
 
 }
