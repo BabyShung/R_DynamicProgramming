@@ -1,5 +1,6 @@
 import Applications.BestTimeToBuyAndSell;
 import Applications.LongestCommonSequence;
+import Applications.LongestCommonSubstring;
 import Applications.MaxSubArray;
 
 public class Test {
@@ -23,6 +24,9 @@ public class Test {
 		
 		LongestCommonSequence lcs = new LongestCommonSequence();
 		lcs.getLongestCommonSequence("abcdefgi", "abyczdeo");
+		
+		LongestCommonSubstring lcsub = new LongestCommonSubstring();
+		lcsub.getLongestCommonSubstring("abcaedf", "wvscaedfgkl");
 	}
 
 }

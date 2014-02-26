@@ -4,9 +4,19 @@ package Applications;
  * Longest common sequence:
  * Doesn't have to be consecutive, but must remain order
  * 
+ * Let's define a two-dimension array,
+ * i is string A with length i, and j is the string B with length j,
+ * c[i,j] means the LCS length of both String A and B
+ * 
+ * So:
+ * 
+ * c[i,j] = 0, i=j=0 or j=0 or i=0
+ * 		  = c[i-1,j-1] + 1, i,j>0 && A[i] = B[j]
+ * 		  = max(c[i-1,j],c[i,j-1]), i,j>0 && A[i] != B[j]
+ * 
  * EG:
- * abcde & cdegh  -> cde
- * abcde & bdc -> bc, since c is not in the sequence order, but bc is in order
+ * abcdez & cdeghz  -> cdez
+ * abcdez & bdcza -> bcz, since c, a is not in the sequence order, but bc is in order
  * 
  * Different from Longest common substring: substring must be consecutive
  * 
@@ -40,7 +50,7 @@ public class LongestCommonSequence {
 		DisplayLCS(c, x, y);
 	}
 
-	public void DisplayLCS(int[][] b, char[] x, char[] y) {
+	private void DisplayLCS(int[][] b, char[] x, char[] y) {
 		char[] lcs = new char[b[b.length - 1][b[0].length - 1]];
 		int k = lcs.length - 1;
 		for (int i = b.length - 1, j = b[0].length - 1; i >= 1 && j >= 1;) {
@@ -57,7 +67,7 @@ public class LongestCommonSequence {
 		System.out.println(lcs);
 	}
 
-	public void print(int[][] a) {
+	private void print(int[][] a) {
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < a[0].length; j++) {
 				System.out.print(a[i][j] + " ");
