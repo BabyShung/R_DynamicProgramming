@@ -27,6 +27,9 @@ public class Test {
 		
 		LongestCommonSubstring lcsub = new LongestCommonSubstring();
 		lcsub.getLongestCommonSubstring("abcaedf", "wvscaedfgkl");
+		
+		String a = "a";
+		System.out.println("?? "+a.substring(0, 0));
 	}
 
 }
