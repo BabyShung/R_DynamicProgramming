@@ -52,6 +52,7 @@ public class LongestCommonSubstring {
 	    	System.out.print(x[i++]);
 	    	max--;
 	    }
+	    System.out.println();
 	}
 	
 	private void print(int[][] a) {
