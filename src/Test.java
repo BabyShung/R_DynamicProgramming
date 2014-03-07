@@ -1,4 +1,5 @@
 import Applications.BestTimeToBuyAndSell;
+import Applications.JumpGame;
 import Applications.LongestCommonSequence;
 import Applications.LongestCommonSubstring;
 import Applications.LongestIncreasingSequence;
@@ -18,10 +19,11 @@ public class Test {
 		System.out.println(msa.maxSubArray3(msa1));
 
 		BestTimeToBuyAndSell bttbas = new BestTimeToBuyAndSell();
-		int[] btta = { 8, 4, 9, 10 };
-		System.out.println(bttbas.maxProfit(btta));
-		System.out.println(bttbas.maxProfit2(btta));
-		System.out.println(bttbas.maxProfit3(btta));
+		int[] btta = { 8, 4, 9, 10, 13 };
+		System.out.println("maxProfit " + bttbas.maxProfit(btta));
+		System.out.println("maxProfit " + bttbas.maxProfit2(btta));
+		System.out.println("maxProfit " + bttbas.maxProfit3(btta));
+		System.out.println("maxProfit " + bttbas.maxProfit4(btta));
 
 		LongestCommonSequence lcs = new LongestCommonSequence();
 		int[] lcsa1 = { 8, 4, 9, 10, 7, 0 };
@@ -42,6 +44,11 @@ public class Test {
 		int[] lisa2 = { 8, 1, 2, 4, 3, 10, 0, 5 };
 		int lisr2 = lis.getLongestIncreasingSequenceDP(lisa2);
 		System.out.println("LIS: " + lisr2);
+
+		JumpGame jg = new JumpGame();
+		int[] jg1 = { 2, 3, 1, 1, 4 };
+		System.out.println("can jump? " + jg.canJump(jg1));
+		System.out.println("min jump: " + jg.jump(jg1));
 	}
 
 }

@@ -1,6 +1,8 @@
 package Applications;
 
 /**
+ * Best Time To Buy And Sell
+ * 
  * You can buy stock from day i and sell it on day j (0<=i<j<=n-1 ---array
  * index, assuming day 1 to day n). Besides, every day the stock has a price
  * value k, and k changes as days go on.
@@ -21,7 +23,7 @@ package Applications;
  * (a[j+1]-a[j]) = a[j+1] - a[i] (0 <= i <= j < n-1)
  * 
  * we know a[j+1] - a[i] is the difference we want to calculate, in order to
- * make it largest, we simply want to calculate the max subarray from i to j
+ * make it largest, we simply want to calculate the max subarray from i to j+1
  * 
  * @author haozheng
  * 
@@ -64,6 +66,19 @@ public class BestTimeToBuyAndSell {
 				diff += prices[i + 1] - prices[i];
 			else
 				diff = Math.max(diff, prices[i + 1] - prices[i]);
+			maxp = Math.max(diff, maxp);
+		}
+		return maxp;
+	}
+
+	public int maxProfit4(int[] prices) { // can also get least lost
+		int maxp = prices[1] - prices[0];
+		int diff = maxp;
+		for (int i = 1; i < prices.length - 1; i++) {
+			if (diff >= 0)
+				diff += prices[i + 1] - prices[i];
+			else
+				diff = prices[i + 1] - prices[i];
 			maxp = Math.max(diff, maxp);
 		}
 		return maxp;

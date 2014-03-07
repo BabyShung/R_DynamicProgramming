@@ -1,12 +1,22 @@
 package Applications;
 
 /**
+ * 		%
+ * 
+ * MaxSubArray
+ * 
  * Given an int array (elements can be both positive and negative, return the
  * maximum consecutive largest sum
  * 
  * 
  * M(k) = max(M(k-1)+Ak,Ak)
  * 
+ * First, if the max-sum before Ak, that is M(k-1) ,which is the max-sum of
+ * consecutive sequence ending at A(k-1), is larger than or equal to 0, then
+ * M(k-1)+Ak will be equivalent to the max-sum where k=2,...n , no matter what
+ * value Ak is. This means M(k-1)+Ak >= Ak. So we let M(k)=M(k-1)+Ak Second,
+ * similarly, if M(k-1)<0, then Ak will be equivalent to the max-sum, no matter
+ * what value Ak is. This means M(k-1)+Ak<Ak. So we let M(k)=Ak
  * 
  * @author haozheng
  * 
