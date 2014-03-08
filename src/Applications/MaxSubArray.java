@@ -1,7 +1,7 @@
 package Applications;
 
 /**
- * 		%
+ * 		@*1
  * 
  * MaxSubArray
  * 

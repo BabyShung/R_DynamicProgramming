@@ -1,6 +1,7 @@
 package Applications;
 
 /**
+ * 	@*1
  * Best Time To Buy And Sell
  * 
  * You can buy stock from day i and sell it on day j (0<=i<j<=n-1 ---array
