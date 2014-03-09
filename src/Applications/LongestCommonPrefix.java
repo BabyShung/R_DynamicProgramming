@@ -1,10 +1,16 @@
 package Applications;
 
 /**
- * Longest Common Prefix Don't know if it has a DP solution.
+ * Longest Common Prefix
  * 
- * But a pretty straightforward way is to scan every first letter. If the same,
- * go on. If not, break ---- O(n*m)
+ * Don't know if it has a DP solution.
+ * 
+ * Given a list of words, find the longest common prefix of them
+ * 
+ * But a pretty straightforward way is to scan every first letter. Fix the first
+ * word, and to scan the rest of words.
+ * 
+ * If the same, go on. If not, break ---- O(n*m)
  * 
  * @author haozheng
  * 
