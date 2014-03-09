@@ -9,11 +9,16 @@ package Applications;
  * 
  * So:
  * 
- * c[i,j] = 0, i=j=0 or j=0 or i=0 = c[i-1,j-1] + 1, i,j>0 && A[i] = B[j] =
- * max(c[i-1,j],c[i,j-1]), i,j>0 && A[i] != B[j]
+ * c[i,j] = 0, ----i=j=0 or j=0 or i=0
  * 
- * EG: abcdez & cdeghz -> cdez abcdez & bdcza -> bcz, since c, a is not in the
- * sequence order, but bc is in order
+ * c[i,j] = c[i-1,j-1] + 1, ----i,j>0 && A[i] = B[j]
+ * 
+ * c[i,j] = max(c[i-1,j],c[i,j-1]), ----i,j>0 && A[i] != B[j]
+ * 
+ * EG: abcdez & cdeghz -> cdez
+ * 
+ * abcdez & bdcza -> bcz, since c, a is not in the sequence order, but bc is in
+ * order
  * 
  * Different from Longest common substring: substring must be consecutive
  * 
@@ -32,7 +37,8 @@ public class LongestCommonSequence {
 		for (int i = 1; i <= x.length; i++) {
 			for (int j = 1; j <= y.length; j++) {
 				// three possibilities
-				if (x[i - 1] == y[j - 1]) {
+				if (x[i - 1] == y[j - 1])// current charAt comparison
+				{
 					c[i][j] = c[i - 1][j - 1] + 1;
 				} else if (c[i - 1][j] >= c[i][j - 1]) {
 					c[i][j] = c[i - 1][j];

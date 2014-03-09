@@ -32,6 +32,7 @@ public class Test {
 		for (int tmp : lcsr)
 			System.out.print(tmp + " ");
 		System.out.println();
+
 		LongestCommonSubstring lcsub = new LongestCommonSubstring();
 		lcsub.getLongestCommonSubstring("abcaedf", "wvscaedfgkl");
 
